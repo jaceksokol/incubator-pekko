@@ -26,8 +26,6 @@ import java.util.concurrent.{ ForkJoinPool, ForkJoinTask, TimeUnit }
  *
  * An alternative version of [[ForkJoinExecutorConfigurator.PekkoForkJoinPool]]
  * that supports the `maximumPoolSize` feature available in [[java.util.concurrent.ForkJoinPool]] in JDK9+.
- *
- * The
  */
 private[dispatch] final class PekkoJdk9ForkJoinPool(
     parallelism: Int,
