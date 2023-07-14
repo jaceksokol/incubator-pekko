@@ -18,6 +18,6 @@
 package org.apache.pekko.dispatch
 
 private[dispatch] object ForkJoinPoolConstants {
-  val MaxCap = 0x7FFF // 32767
-  val DefaultKeepAlive = 60_000L
+  val MaxCap: Int = 0x7FFF // 32767
+  val DefaultKeepAlive: Long = 60000
 }
