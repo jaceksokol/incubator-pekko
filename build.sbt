@@ -128,7 +128,7 @@ lazy val actor = pekkoModule("actor")
   })
   .settings(VersionGenerator.settings)
   .settings(serialversionRemoverPluginSettings)
-  .enablePlugins(BoilerplatePlugin)
+  .enablePlugins(BoilerplatePlugin, Jdk9)
 
 lazy val actorTests = pekkoModule("actor-tests")
   .dependsOn(testkit % "compile->compile;test->test", actor)
