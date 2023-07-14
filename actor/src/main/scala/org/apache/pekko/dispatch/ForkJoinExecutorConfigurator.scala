@@ -100,9 +100,10 @@ class ForkJoinExecutorConfigurator(config: Config, prerequisites: DispatcherPrer
       this(threadFactory, parallelism, asyncMode = true)
     def createExecutorService: ExecutorService = pekkoJdk9ForkJoinPoolClassOpt match {
       case Some(clz) =>
-        // there is only one constructor
-        clz.getConstructors.head.newInstance(parallelism, threadFactory, maxPoolSize,
-          MonitorableThreadFactory.doNothing, asyncMode).asInstanceOf[ExecutorService]
+        // there is only one constructor (Object conversion required by Scala 2.12)
+        clz.getConstructors.head.newInstance(parallelism.asInstanceOf[Object], threadFactory,
+          maxPoolSize.asInstanceOf[Object], MonitorableThreadFactory.doNothing,
+          asyncMode.asInstanceOf[Object]).asInstanceOf[ExecutorService]
       case _ =>
         new PekkoForkJoinPool(parallelism, threadFactory, MonitorableThreadFactory.doNothing, asyncMode)
     }
