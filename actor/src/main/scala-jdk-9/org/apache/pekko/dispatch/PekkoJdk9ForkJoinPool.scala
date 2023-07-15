@@ -17,6 +17,7 @@
 
 package org.apache.pekko.dispatch
 
+import org.apache.pekko.annotation.InternalApi
 import org.apache.pekko.dispatch.ForkJoinExecutorConfigurator.PekkoForkJoinTask
 
 import java.util.concurrent.{ ForkJoinPool, ForkJoinTask, TimeUnit }
@@ -27,6 +28,7 @@ import java.util.concurrent.{ ForkJoinPool, ForkJoinTask, TimeUnit }
  * An alternative version of [[ForkJoinExecutorConfigurator.PekkoForkJoinPool]]
  * that supports the `maximumPoolSize` feature available in [[java.util.concurrent.ForkJoinPool]] in JDK9+.
  */
+@InternalApi
 private[dispatch] final class PekkoJdk9ForkJoinPool(
     parallelism: Int,
     threadFactory: ForkJoinPool.ForkJoinWorkerThreadFactory,
