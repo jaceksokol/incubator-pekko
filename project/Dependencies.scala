@@ -33,7 +33,7 @@ object Dependencies {
   val protobufJavaVersion = "3.16.3"
   val logbackVersion = "1.2.11"
 
-  val jacksonCoreVersion = "2.14.3"
+  val jacksonCoreVersion = "2.15.2"
   val jacksonDatabindVersion = jacksonCoreVersion
 
   val scala212Version = "2.12.18"
