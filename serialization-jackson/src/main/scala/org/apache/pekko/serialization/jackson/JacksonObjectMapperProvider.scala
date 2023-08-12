@@ -22,7 +22,15 @@ import scala.util.Success
 import com.fasterxml.jackson.annotation.JsonAutoDetect
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.PropertyAccessor
-import com.fasterxml.jackson.core.{JsonFactory, JsonFactoryBuilder, JsonGenerator, JsonParser, StreamReadConstraints, StreamReadFeature, StreamWriteFeature}
+import com.fasterxml.jackson.core.{
+  JsonFactory,
+  JsonFactoryBuilder,
+  JsonGenerator,
+  JsonParser,
+  StreamReadConstraints,
+  StreamReadFeature,
+  StreamWriteFeature
+}
 import com.fasterxml.jackson.core.json.JsonReadFeature
 import com.fasterxml.jackson.core.json.JsonWriteFeature
 import com.fasterxml.jackson.databind.DeserializationFeature
