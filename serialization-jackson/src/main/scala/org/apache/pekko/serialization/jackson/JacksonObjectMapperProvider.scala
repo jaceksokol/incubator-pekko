@@ -17,11 +17,8 @@ import java.util.Optional
 import java.util.concurrent.ConcurrentHashMap
 import scala.annotation.nowarn
 import scala.collection.immutable
-import scala.util.Failure
-import scala.util.Success
-import com.fasterxml.jackson.annotation.JsonAutoDetect
-import com.fasterxml.jackson.annotation.JsonCreator
-import com.fasterxml.jackson.annotation.PropertyAccessor
+import scala.util.{ Failure, Success }
+import com.fasterxml.jackson.annotation.{ JsonAutoDetect, JsonCreator, PropertyAccessor }
 import com.fasterxml.jackson.core.{
   JsonFactory,
   JsonFactoryBuilder,
@@ -31,28 +28,29 @@ import com.fasterxml.jackson.core.{
   StreamReadFeature,
   StreamWriteFeature
 }
-import com.fasterxml.jackson.core.json.JsonReadFeature
-import com.fasterxml.jackson.core.json.JsonWriteFeature
-import com.fasterxml.jackson.databind.DeserializationFeature
-import com.fasterxml.jackson.databind.MapperFeature
-import com.fasterxml.jackson.databind.Module
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.databind.SerializationFeature
-import com.fasterxml.jackson.databind.json.JsonMapper
+import com.fasterxml.jackson.core.json.{ JsonReadFeature, JsonWriteFeature }
+import com.fasterxml.jackson.databind.{
+  DeserializationFeature,
+  MapperFeature,
+  Module,
+  ObjectMapper,
+  SerializationFeature
+}
 import com.fasterxml.jackson.module.paramnames.ParameterNamesModule
 import com.typesafe.config.Config
 import org.apache.pekko
-import pekko.actor.ActorSystem
-import pekko.actor.ClassicActorSystemProvider
-import pekko.actor.DynamicAccess
-import pekko.actor.ExtendedActorSystem
-import pekko.actor.Extension
-import pekko.actor.ExtensionId
-import pekko.actor.ExtensionIdProvider
+import pekko.actor.{
+  ActorSystem,
+  ClassicActorSystemProvider,
+  DynamicAccess,
+  ExtendedActorSystem,
+  Extension,
+  ExtensionId,
+  ExtensionIdProvider
+}
 import pekko.actor.setup.Setup
 import pekko.annotation.InternalStableApi
-import pekko.event.Logging
-import pekko.event.LoggingAdapter
+import pekko.event.{ Logging, LoggingAdapter }
 import pekko.util.unused
 import pekko.util.OptionConverters._
 
