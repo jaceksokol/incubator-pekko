@@ -36,6 +36,7 @@ import com.fasterxml.jackson.databind.{
   ObjectMapper,
   SerializationFeature
 }
+import com.fasterxml.jackson.databind.json.JsonMapper
 import com.fasterxml.jackson.module.paramnames.ParameterNamesModule
 import com.typesafe.config.Config
 import org.apache.pekko
